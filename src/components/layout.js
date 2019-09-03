@@ -7,21 +7,18 @@
 
 import React from "react"
 import PropTypes from "prop-types"
-import { StaticQuery, graphql, Link} from "gatsby"
 import {
   Collapse,
   Navbar,
   NavbarToggler,
   NavbarBrand,
   Nav,
-  NavItem,
-  NavLink,
   UncontrolledDropdown,
   DropdownToggle,
   DropdownMenu,
   DropdownItem } from 'reactstrap';
-import Header from "./header"
 import "./layout.css"
+import "./bootstrap-social.css"
 
 import logo from "../images/fcg_logo_corrected.png"
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -44,7 +41,7 @@ class Layout extends React.Component {
   render() {
     return (
       <div>
-        <Navbar dark style={{backgroundColor: '#8d0707'}} sticky="top" expand="lg">
+      <Navbar dark style={{backgroundColor: '#8d0707'}} expand="lg">
           <NavbarBrand href="/" className="mr-auto">
             <img
               src={logo}
@@ -56,6 +53,9 @@ class Layout extends React.Component {
           </NavbarBrand>
           <NavbarToggler onClick={this.toggleNavbar} className="mr-2" />
           <Collapse isOpen={!this.state.collapsed} navbar>
+          <ul className="navbar-nav mr-auto">
+
+          </ul>
             <Nav navbar>
               <UncontrolledDropdown nav inNavbar>
                 <DropdownToggle nav caret>
@@ -65,12 +65,12 @@ class Layout extends React.Component {
                   <DropdownItem href="/Executive_Board/">
                     Executive Board
                   </DropdownItem>
-                  <DropdownItem href="/Founding_Team/">
+                  {/*<DropdownItem href="/Founding_Team/">
                     Founding Team
-                  </DropdownItem>
+                  </DropdownItem>*/}
                 </DropdownMenu>
               </UncontrolledDropdown>
-              <UncontrolledDropdown nav inNavbar>
+              {/*<UncontrolledDropdown nav inNavbar>
                 <DropdownToggle nav caret>
                   Services
                 </DropdownToggle>
@@ -91,17 +91,14 @@ class Layout extends React.Component {
                     Additional Resources
                   </DropdownItem>
                 </DropdownMenu>
-              </UncontrolledDropdown>
-              <NavItem>
+              </UncontrolledDropdown>*/}
+              {/*<NavItem>
                 <NavLink href="/Accomplishments/">Accomplishments</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="/Gallery/">Gallery</NavLink>
-              </NavItem>
-              <NavItem>
+              </NavItem>*/}
+              {/*<NavItem>
                 <NavLink href="/Membership/">Membership Services</NavLink>
-              </NavItem>
-              <UncontrolledDropdown nav inNavbar>
+              </NavItem>*/}
+              {/*<UncontrolledDropdown nav inNavbar>
                 <DropdownToggle nav caret>
                   News Media
                 </DropdownToggle>
@@ -113,11 +110,13 @@ class Layout extends React.Component {
                     Blog
                   </DropdownItem>
                 </DropdownMenu>
-              </UncontrolledDropdown>
+              </UncontrolledDropdown>*/}
             </Nav>
           </Collapse>
         </Navbar>
         {this.props.children}
+
+         <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossOrigin="anonymous"/>
       </div>
     );
   }
